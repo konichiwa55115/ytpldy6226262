@@ -193,6 +193,17 @@ async def uloader(client, message):
         video = True
     is_downloading = True
     
+     try:
+        await msg.edit("`Downloading Playlist...`")
+        loop = get_running_loop()
+        await loop.run_in_executor(None, partial(ytdl_dowload, url, opts))
+        filename = sorted(get_lst_of_files(out_folder, []))
+    except Exception as e:
+        is_downloading = False
+        return await msg.edit("Error: " + e)
+
+    c_time = time.time()
+    
     if song:
         for single_file in filename:
             if os.path.exists(single_file):
