@@ -234,17 +234,7 @@ async def uloader(client, message):
         await client.send_message(
             logchnl, f"Name: {message.from_user.mention}\nURL: {url} {typee}"
         )
-    try:
-        await msg.edit("`Downloading Playlist...`")
-        loop = get_running_loop()
-        await loop.run_in_executor(None, partial(ytdl_dowload, url, opts))
-        filename = sorted(get_lst_of_files(out_folder, []))
     
-
-    try:
-        await msg.edit("`Uploading.`")
-    except MessageNotModified:
-        pass
     if song:
         for single_file in filename:
             if os.path.exists(single_file):
