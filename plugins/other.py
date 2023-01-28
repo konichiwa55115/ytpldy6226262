@@ -23,7 +23,7 @@ import asyncio
 async def start_msg(client, message):
     await message.reply_text(
         f"السلام عليكم يا  {message.from_user.mention}أنا بوت أقوم بتحميل قوائم يوتيوب بأي صيغة , فقط أرسل رابط قائمة التشغيل متبوعاً بالصيغة المطلوبة (audio/video) \n\n مثال \n\n https://www.youtube.com/playlist?list=PL1GJ09M00J5bEQParH7QM9NgLEU31qIp_ audio \n\n ممنوع استخدام البوت لتحميل الأغاني أو المسلسلات أو الشيلات أو أي شيء حرام \n\n لبقية البوتات هنا \n\n https://t.me/ibnAlQyyim/1120 \n\n ولدعم استمرار المشروع هنا \n\n http://paypal.me/kelectronic89 \n\n تنبيه : هذا البوت بطيء في تحميل القوائم بعكس الآخر , شكراً لتفهمك ",),
-    )
+    
 
 
 @Client.on_callback_query()
