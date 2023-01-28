@@ -239,9 +239,7 @@ async def uloader(client, message):
         loop = get_running_loop()
         await loop.run_in_executor(None, partial(ytdl_dowload, url, opts))
         filename = sorted(get_lst_of_files(out_folder, []))
-    except Exception as e:
-        is_downloading = False
-        return await msg.edit("Error: " + e)
+    
 
     c_time = time.time()
     try:
