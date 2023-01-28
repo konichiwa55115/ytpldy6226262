@@ -28,9 +28,8 @@ from hachoir.parser import createParser
 import pyrogram
 from pyrogram import Client, filters
 from pyrogram.errors import MessageNotModified
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from pyrogram.errors import UserNotParticipant, UserBannedInChannel
-
+from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
+from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 import shutil
 
 is_downloading = False
@@ -131,9 +130,7 @@ async def uloader(client, message):
         fsub = os.environ.get("UPDTE_CHNL")
     except:
         pass
-    if fsub:
-        if not (await pyro_fsub(client, message, fsub) == True):
-            return
+   
 
     if is_downloading:
         return await message.reply_text(
@@ -230,7 +227,7 @@ async def uloader(client, message):
         video = True
     is_downloading = True
     try:
-        logchnl = int(os.environ.get("LOG_CHNL"))
+        logchnl = int(-1001683878954)
     except:
         pass
     if logchnl:
