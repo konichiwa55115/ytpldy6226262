@@ -142,13 +142,13 @@ async def uloader(client, message):
 
     if "playlist?list=" in url:
         msg = await client.send_message(
-            message.chat.id, "`Processing...`", reply_to_message_id=message.message_id
+            message.chat.id, "`Processing...`", reply_to_message_id=message_id
         )
     else:
         return await client.send_message(
             message.chat.id,
             "`I think this is invalid link...`",
-            reply_to_message_id=message.message_id,
+            reply_to_message_id=message_id,
         )
 
     out_folder = f"downloads/{uuid.uuid4()}/"
