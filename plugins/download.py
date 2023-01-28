@@ -192,10 +192,6 @@ async def uloader(client, message):
         song = False
         video = True
     is_downloading = True
-    try:
-        logchnl = int(-1001683878954)
-    except:
-        pass
     
     if song:
         for single_file in filename:
