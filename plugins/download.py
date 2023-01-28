@@ -125,13 +125,6 @@ def ytdl_dowload(url, opts):
 async def uloader(client, message):
 
     global is_downloading
-
-    try:
-        fsub = os.environ.get("UPDTE_CHNL")
-    except:
-        pass
-   
-
     if is_downloading:
         return await message.reply_text(
             "`Another download is in progress, try again after sometime.`", quote=True
