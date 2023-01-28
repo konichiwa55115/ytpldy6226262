@@ -30,6 +30,7 @@ from pyrogram import Client, filters
 from pyrogram.errors import MessageNotModified 
 from pyrogram.methods.messages.send_video import SendVideo
 from pyrogram.methods.messages.send_audio import SendAudio
+from pyrogram.types.input_media
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 import shutil
