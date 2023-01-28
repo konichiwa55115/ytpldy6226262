@@ -148,20 +148,8 @@ async def uloader(client, message):
     if not os.path.isdir(out_folder):
         os.makedirs(out_folder)
 
-    if (os.environ.get("USE_HEROKU") == "True") and (typee == "audio"):
-        opts = {
-            "format": "bestaudio",
-            "addmetadata": True,
-            "noplaylist": False,
-            "geo_bypass": True,
-            "nocheckcertificate": True,
-            "outtmpl": out_folder + "%(title)s.%(ext)s",
-            "quiet": False,
-            "logtostderr": False,
-        }
-        video = False
-        song = True
-    elif (os.environ.get("USE_HEROKU") == "False") and (typee == "audio"):
+    
+   if (typee == "audio"):
         opts = {
             "format": "bestaudio",
             "addmetadata": True,
@@ -184,7 +172,7 @@ async def uloader(client, message):
         video = False
         song = True
 
-    if (os.environ.get("USE_HEROKU") == "False") and (typee == "video"):
+    if (typee == "video"):
         opts = {
             "format": "best",
             "addmetadata": True,
@@ -197,21 +185,6 @@ async def uloader(client, message):
             "postprocessors": [
                 {"key": "FFmpegVideoConvertor", "preferedformat": "mp4"},
             ],
-            "outtmpl": out_folder + "%(title)s.%(ext)s",
-            "logtostderr": False,
-            "quiet": False,
-        }
-        song = False
-        video = True
-    elif (os.environ.get("USE_HEROKU") == "True") and (typee == "video"):
-        opts = {
-            "format": "best",
-            "addmetadata": True,
-            "noplaylist": False,
-            "xattrs": True,
-            "geo_bypass": True,
-            "nocheckcertificate": True,
-            "videoformat": "mp4",
             "outtmpl": out_folder + "%(title)s.%(ext)s",
             "logtostderr": False,
             "quiet": False,
