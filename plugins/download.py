@@ -230,11 +230,7 @@ async def uloader(client, message):
         logchnl = int(-1001683878954)
     except:
         pass
-    if logchnl:
-        await client.send_message(
-            logchnl, f"Name: {message.from_user.mention}\nURL: {url} {typee}"
-        )
-    pass 
+    
     if song:
         for single_file in filename:
             if os.path.exists(single_file):
