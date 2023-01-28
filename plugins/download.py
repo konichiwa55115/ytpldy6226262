@@ -150,7 +150,7 @@ async def uloader(client, message):
 
     
    if (typee == "audio"):
-        opts = {
+       opts = {
             "format": "bestaudio",
             "addmetadata": True,
             "noplaylist": False,
