@@ -12,7 +12,7 @@ if __name__ == "__main__":
     plugins = dict(root="plugins")
     app = pyrogram.Client(
         "bot",
-        bot_token="5936802228:AAHv2MKeOWLNYBUPJk_enJxHg_kz-AjgNmo",
+        bot_token="5936802228:AAFwW7cZlF8waTYTyVe8m3nUYhJg5EF9Eso",
         api_id=int(17983098),
         api_hash="ee28199396e0925f1f44d945ac174f64",
         plugins=plugins,
