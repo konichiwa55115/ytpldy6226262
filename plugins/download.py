@@ -27,7 +27,9 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 import pyrogram
 from pyrogram import Client, filters
-from pyrogram.errors import MessageNotModified
+from pyrogram.errors import MessageNotModified 
+from pyrogram.methods.messages.send_video import SendVideo
+from pyrogram.methods.messages.send_audio import SendAudio
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 import shutil
@@ -217,7 +219,7 @@ async def uloader(client, message):
                         tnow = time.time()
                         fduration, fwidth, fheight = get_metadata(single_file)
                         await message.reply_chat_action("upload_audio")
-                        await client.send_audio(
+                        await SendAudio(
                             message.chat.id,
                             single_file,
                             caption=f"**File:** `{ytdl_data_name_audio}`",
@@ -242,7 +244,7 @@ async def uloader(client, message):
                         tnow = time.time()
                         fduration, fwidth, fheight = get_metadata(single_file)
                         await message.reply_chat_action("upload_video")
-                        await client.send_video(
+                        await SendVideo(
                             message.chat.id,
                             single_file,
                             caption=f"**File:** `{ytdl_data_name_video}`",
