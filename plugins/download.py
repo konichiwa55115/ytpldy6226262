@@ -216,7 +216,7 @@ async def uloader(client, message):
     try:
         await msg.edit("`Uploading.`")
     except MessageNotModified:
-        pass
+        pass -k
     if song:
         for single_file in filename:
             if os.path.exists(single_file):
