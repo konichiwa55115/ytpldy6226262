@@ -26,7 +26,7 @@
     },
     "USE_HEROKU": {
       "description": "Do not change this. Else bot will crash!",
-      "value": "True"
+      "value": "False"
     }
   },
   "buildpacks": [{
