@@ -149,8 +149,8 @@ async def uloader(client, message):
         os.makedirs(out_folder)
 
     
-   if (typee == "audio"):
-       opts = {
+    if (typee == "audio"):
+        opts = {
             "format": "bestaudio",
             "addmetadata": True,
             "noplaylist": False,
