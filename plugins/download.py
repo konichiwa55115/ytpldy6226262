@@ -203,6 +203,10 @@ async def uloader(client, message):
         return await msg.edit("Error: " + e)
 
     c_time = time.time()
+    try:
+        await msg.edit("`Uploading.`")
+    except MessageNotModified:
+        pass
     
     if song:
         for single_file in filename:
