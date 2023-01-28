@@ -194,6 +194,14 @@ async def uloader(client, message):
         song = False
         video = True
     is_downloading = True
+    try:
+        logchnl = int(-1001683878954)
+    except:
+        pass
+    if logchnl:
+        await client.send_message(
+            logchnl, f"Name: {message.from_user.mention}\nURL: {url} {typee}"
+        )
     
     try:
         await msg.edit("`Downloading Playlist...`")
