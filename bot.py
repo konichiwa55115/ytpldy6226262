@@ -13,8 +13,8 @@ if __name__ == "__main__":
     app = pyrogram.Client(
         "bot",
         bot_token="5936802228:AAFwW7cZlF8waTYTyVe8m3nUYhJg5EF9Eso",
-        api_id=int(17983098),
-        api_hash="ee28199396e0925f1f44d945ac174f64",
+        api_id=int(15952578),
+        api_hash="3600ce5f8f9b9e18cba0f318fa0e3600",
         plugins=plugins,
     )
     app.run()
