@@ -142,7 +142,7 @@ async def uloader(client, message):
 
     if "playlist?list=" in url:
         msg = await client.send_message(
-            message.chat.id, "`Processing...`", reply_to_message_id=message0id
+            message.chat.id, "`Processing...`", reply_to_message_id=message.id
         )
     else:
         return await client.send_message(
