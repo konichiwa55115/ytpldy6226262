@@ -241,7 +241,6 @@ async def uloader(client, message):
         filename = sorted(get_lst_of_files(out_folder, []))
     
 
-    c_time = time.time()
     try:
         await msg.edit("`Uploading.`")
     except MessageNotModified:
