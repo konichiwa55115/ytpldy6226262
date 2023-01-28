@@ -219,12 +219,21 @@ async def uloader(client, message):
                         tnow = time.time()
                         fduration, fwidth, fheight = get_metadata(single_file)
                         await message.reply_chat_action("upload_audio")
-                        await SendAudio(
+                        await client.send_audio(
                             message.chat.id,
                             single_file,
                             caption=f"**File:** `{ytdl_data_name_audio}`",
                             duration=fduration,
                         )
+                    except Exception as e:
+                        await msg.edit("{} caused `{}`".format(single_file, str(e)))
+                        continue
+                    await message.reply_chat_action("cancel")
+                    os.remove(single_file)
+        LOGGER.info(f"Clearing {out_folder}")
+        shutil.rmtree(out_folder)
+        await del_old_msg_send_msg(msg, client, message)
+        is_downloading = False
                    
 
     if video:
@@ -236,7 +245,7 @@ async def uloader(client, message):
                         tnow = time.time()
                         fduration, fwidth, fheight = get_metadata(single_file)
                         await message.reply_chat_action("upload_video")
-                        await SendVideo(
+                        await client.send_video(
                             message.chat.id,
                             single_file,
                             caption=f"**File:** `{ytdl_data_name_video}`",
