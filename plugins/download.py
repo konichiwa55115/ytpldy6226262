@@ -217,7 +217,6 @@ async def uloader(client, message):
         await msg.edit("`Uploading.`")
     except MessageNotModified:
         pass
-    
     if song:
         for single_file in filename:
             if os.path.exists(single_file):
@@ -243,7 +242,6 @@ async def uloader(client, message):
         await del_old_msg_send_msg(msg, client, message)
         is_downloading = False
                    
-
     if video:
         for single_file in filename:
             if os.path.exists(single_file):
