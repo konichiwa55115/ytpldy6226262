@@ -172,7 +172,7 @@ async def uloader(client, message):
         video = False
         song = True
 
-    if (typee == "video"):
+    elif (typee == "video"):
         opts = {
             "format": "best",
             "addmetadata": True,
@@ -240,7 +240,7 @@ async def uloader(client, message):
         await del_old_msg_send_msg(msg, client, message)
         is_downloading = False
                    
-    if video:
+    elif video:
         for single_file in filename:
             if os.path.exists(single_file):
                 if single_file.endswith((".mp4", ".mp3", ".flac", ".webm")):
