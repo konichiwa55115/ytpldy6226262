@@ -28,8 +28,6 @@ from hachoir.parser import createParser
 import pyrogram
 from pyrogram import Client, filters
 from pyrogram.errors import MessageNotModified 
-from pyrogram.methods.messages.send_video 
-from pyrogram.methods.messages.send_audio 
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 import shutil
