@@ -254,7 +254,15 @@ async def uloader(client, message):
                             width=fwidth,
                             height=fheight,
                         )
-                   
+                    except Exception as e:
+                        await msg.edit("{} caused `{}`".format(single_file, str(e)))
+                        continue
+                    await message.reply_chat_action("cancel")
+                    os.remove(single_file)
+        LOGGER.info(f"Clearing {out_folder}")
+        shutil.rmtree(out_folder)
+        await del_old_msg_send_msg(msg, client, message)
+        is_downloading = False
 
 def get_lst_of_files(input_directory, output_lst):
     filesinfolder = os.listdir(input_directory)
