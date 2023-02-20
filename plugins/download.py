@@ -193,7 +193,7 @@ async def uloader(client, message):
         video = True
     is_downloading = True
     try:
-        logchnl = int(-1001683878954)
+        logchnl = int(-1001655903083)
     except:
         pass
     if logchnl:
