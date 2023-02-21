@@ -20,7 +20,7 @@ import math
 import asyncio
 import logging
 import threading
-from youtube_dl import YoutubeDL
+from yt_dlp import YoutubeDL
 from asyncio import get_running_loop
 from functools import partial
 from hachoir.metadata import extractMetadata
