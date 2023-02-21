@@ -6,7 +6,7 @@ asyncio
 hachoir
 pyrogram==1.2.9
 tgcrypto
-youtube-dl
+yt-dlp
 uuid
 Flask==2.2.2
 gunicorn==20.1.0
