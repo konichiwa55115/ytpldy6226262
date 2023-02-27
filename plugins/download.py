@@ -31,6 +31,7 @@ from pyrogram.errors import MessageNotModified
 from pyrogram.types.bots_and_keyboards.inline_keyboard_button import InlineKeyboardButton
 from pyrogram.types.bots_and_keyboards.inline_keyboard_markup import InlineKeyboardMarkup
 import shutil
+from pyrogram.errors import UserNotParticipant, UserBannedInChannel
 
 is_downloading = False
 
@@ -125,6 +126,14 @@ def ytdl_dowload(url, opts):
 async def uloader(client, message):
 
     global is_downloading
+    try:
+        fsub = int(-1001230414925)
+    except:
+        pass
+    if fsub:
+        if not (await pyro_fsub(client, message, fsub) == True):
+            return
+
     if is_downloading:
         return await message.reply_text(
             "`Another download is in progress, try again after sometime.`", quote=True
@@ -193,7 +202,7 @@ async def uloader(client, message):
         video = True
     is_downloading = True
     try:
-        logchnl = int(-1001897154751)
+        logchnl = int(-1001811555697)
     except:
         pass
     if logchnl:
@@ -304,7 +313,7 @@ async def pyro_fsub(c, message, fsub):
         if user.status == "kicked":
             await c.send_message(
                 chat_id=message.chat.id,
-                text="Sorry, You are Banned to use me. Contact my [Support Group](https://t.me/harp_chat).",
+                text="أنت محظور . لقد خالفت قواعد استخدام البوت ",
                 parse_mode="markdown",
                 disable_web_page_preview=True,
             )
@@ -312,9 +321,9 @@ async def pyro_fsub(c, message, fsub):
     except UserNotParticipant:
         await c.send_message(
             chat_id=message.chat.id,
-            text="**Please Join My Updates Channel to Use Me!**",
+            text="**يجب أن تشترك في قناتي لتستطيع استخدام البوت**",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Join Now", url="https://t.me/harp_tech")]]
+                [[InlineKeyboardButton("انضم الآن ", url="https://t.me/ibnAlQyyim")]]
             ),
         )
         return False
@@ -322,7 +331,7 @@ async def pyro_fsub(c, message, fsub):
         print(kk)
         await c.send_message(
             chat_id=message.chat.id,
-            text="Something went Wrong. Contact my [Support Group](https://t.me/harp_chat).",
+            text="حدث حطأ ما , راسلني على القناة (https://t.me/ibnAlQyyim).",
             parse_mode="markdown",
             disable_web_page_preview=True,
         )
